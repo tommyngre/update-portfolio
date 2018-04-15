@@ -2,5 +2,16 @@ body{
   font-family: 'Consolas', 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-weight: 700;
+  font-style:italic;
+}
+
+#tommy{
+}
+
+.load-section:hover{
+  text-decoration: currentColor;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  cursor: pointer;
 }
 

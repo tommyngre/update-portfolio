@@ -11,13 +11,13 @@ function assignRandomColor(){
 
 function buildAboutMe(){
   let col = assignRandomColor();
-  let html = `<span id="about" class="load-section" style="color:${assignRandomColor()}">..about.....</span>`
+  let html = `<span id="about" class="load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">..about.....</span>`
   return html;
 }
 
 function buildPortfolio(){
   let col = assignRandomColor();
-  let html = `<span id="portfolio" class="load-section" style="color:${assignRandomColor()}">...portfolio</span>`
+  let html = `<span id="portfolio" class="load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">...portfolio</span>`
   return html;
 }
 
@@ -25,14 +25,15 @@ function getDiv(i,aboutmePos,portfolioPos){
   let div = $('<div class="row center-align animated bounce">')
   if (i == aboutmePos){
     let html = buildAboutMe();
-    $(div).html(html);
+    $(div).addClass('somethin').html(html);
     return div;
   } else if (i == portfolioPos) {
     let html = buildPortfolio();
-    $(div).html(html);
+    $(div).addClass('somethin').html(html);
     return div;
   } else {
-    $(div).text('............').css('color',assignRandomColor())
+    $(div).addClass('nuthin')
+    .html(`<span style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">............</span>`)
   }
   return div;
  }
@@ -74,6 +75,20 @@ function loadingDialog(){
     i++;
   } while (i<whByDh);
 }
+
+function dropDotsToLeft(){
+  $('.nuthin').remove();
+  //animate the move from center to left
+  $('.somethin').removeClass('center-align');
+}
+
+$(document.body).on('click', '#about', function(){
+  dropDotsToLeft();
+})
+
+$(document.body).on('click', '#portfolio', function(){
+  dropDotsToLeft();
+})
 
 $(document).ready(function(){
   loadingDialog();
