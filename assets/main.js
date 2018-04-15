@@ -1,19 +1,23 @@
 function randomColor(){
-  let rgb = [1,1,1];
-  let rnd = Math.floor(Math.random() * 255);
-  const map = rgb.map(value => value * rnd );
-  return `rgba(${map[0]},${map[1]},${map[2]},1)`;
+  let r = Math.floor(Math.random() * 255) 
+  return r ;
+}
+
+function assignRandomColor(){
+  let init = [1,1,1];
+  let rgb = init.map(element => element * randomColor() );
+  return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},1)`;
 }
 
 function buildAboutMe(){
-  let col = randomColor();
-  let html = `..<span id="about" class="load-section" style="color:${randomColor()}">about</span>.....`
+  let col = assignRandomColor();
+  let html = `<span id="about" class="load-section" style="color:${assignRandomColor()}">..about.....</span>`
   return html;
 }
 
 function buildPortfolio(){
-  let col = randomColor();
-  let html = `...<span id="portfolio" class="load-section"style="color:${randomColor()}">portfolio</span>`
+  let col = assignRandomColor();
+  let html = `<span id="portfolio" class="load-section" style="color:${assignRandomColor()}">...portfolio</span>`
   return html;
 }
 
@@ -28,7 +32,7 @@ function getDiv(i,aboutmePos,portfolioPos){
     $(div).html(html);
     return div;
   } else {
-    $(div).text('............')
+    $(div).text('............').css('color',assignRandomColor())
   }
   return div;
  }
