@@ -14,11 +14,12 @@ p{
 
 .cent{
   display:table;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 #loading-container{
   position: relative;
+  margin-bottom:20px;
 }
 
 .load-section:hover{

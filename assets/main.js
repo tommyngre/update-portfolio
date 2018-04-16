@@ -9,26 +9,30 @@ function assignRandomColor() {
   return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},1)`;
 }
 
-function buildAboutMe() {
-  let col = assignRandomColor();
-  let html = `<span id="about" data-name="about" class="cent load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">.{about}....</span>`
-  return html;
+function getDots(whichLink) {
+  let dots = "";
+  let dotsNeeded = 12 - whichLink.length - 2;
+  for (let i = 0; i<dotsNeeded; i++){
+    dots = dots + ".";
+  }
+  return dots;
 }
 
-function buildPortfolio() {
+function buildLink(whichLink) {
+  let dots = getDots(whichLink);
   let col = assignRandomColor();
-  let html = `<span id="portfolio" data-name="portfolio" class="cent load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">.{portfolio}</span>`
+  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">${dots}{${whichLink}}</span>`
   return html;
 }
 
 function getDiv(i, aboutmePos, portfolioPos) {
   let div = $('<div class="cent row animated bounce">')
   if (i == aboutmePos) {
-    let html = buildAboutMe();
+    let html = buildLink("about");
     $(div).addClass('somethin some-some').html(html);
     return div;
   } else if (i == portfolioPos) {
-    let html = buildPortfolio();
+    let html = buildLink("portfolio");
     $(div).addClass('somethin some-some').html(html);
     return div;
   } else {
@@ -44,7 +48,12 @@ function loadingDialog() {
   let wh = window.innerHeight;
   let ww = window.innerWidth;
 
-  let whByDh = Math.floor((wh - dh) / dh);
+  console.log(dh);
+  console.log(wh);
+
+  let whByDh = Math.floor((wh - dh) / dh) - 1;
+
+  console.log(whByDh);
 
   //get monospace char width
   //printed random char instead of '...'
@@ -75,21 +84,22 @@ function loadingDialog() {
 
 function loadSection(section) {
   console.log(section);
-  let sec = $('<section>')
+  let sec = $('<div>')
     .css('color', $(section).css('color'))
-    .css('background-color', $(section).css('background-color'))
+    .addClass('col s12 m6 l9');
+    //.css('background-color', $(section).css('background-color'))
 
   let html = `
-    <p>${$(section).attr('data-name')}</p>
-    <p>Whatever...</p>
+    <p style="background-color:${$(section).css('background-color')}; text-align:center">${$(section).attr('data-name')}</p>
+    <p>Here's where we put some info...</p>
   `;
 
   $(sec).html(html);
 
-  $('body').append(sec);
+  $("#wrap").append(sec);
 }
 
-function dropDotsToLeft(section) {
+function toLeft(section) {
   $('.nuthin').addClass('fadeOutLeft');
 
   setTimeout(function () {
@@ -97,19 +107,25 @@ function dropDotsToLeft(section) {
   }, 100);
 
   //animate the move from center to left
+  $('.cent').animate({
+    'margin': 0
+  }, "fast");
+
   $('.somethin').animate({
     'margin-left': 0
   }, "fast");
+
+  $('#loading-container').addClass('col s12 m6 l3');
 
   loadSection(section);
 }
 
 $(document.body).on('click', '#about', function () {
-  dropDotsToLeft('#about');
+  toLeft('#about');
 })
 
 $(document.body).on('click', '#portfolio', function () {
-  dropDotsToLeft('#portfolio');
+  toLeft('#portfolio');
 })
 
 $(document).ready(function () {
