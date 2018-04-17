@@ -1,8 +1,12 @@
 body{
-  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu', 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-weight: 700;
   font-style:italic;
+}
+
+#sec{
+  font-style: normal;
 }
 
 p{
