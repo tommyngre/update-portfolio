@@ -83,20 +83,22 @@ function loadingDialog() {
 }
 
 function loadSection(section) {
-  console.log(section);
-  let sec = $('<div>')
+  $('#section-wrap').html("");
+  let sec = $('<div id="sec">')
     .css('color', $(section).css('color'))
-    .addClass('col s12 m6 l9');
     //.css('background-color', $(section).css('background-color'))
 
   let html = `
     <p style="background-color:${$(section).css('background-color')}; text-align:center">${$(section).attr('data-name')}</p>
-    <p>Here's where we put some info...</p>
   `;
+
+  html += `
+  <p>Here's where we put some info...</p>
+  `
 
   $(sec).html(html);
 
-  $("#wrap").append(sec);
+  $("#section-wrap").append(sec);
 }
 
 function toLeft(section) {
