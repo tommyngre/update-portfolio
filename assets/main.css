@@ -1,15 +1,14 @@
 body{
-  font-family: 'Ubuntu', 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
   font-size: 3rem;
-  font-weight: 700;
-  font-style:italic;
+  font-style: italic;
 }
 
 #sec{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Dosis', sans-serif;
   font-style: normal;
   display:inline-block;
-
+  font-weight: 400
 }
 
 p{
@@ -22,6 +21,7 @@ p{
 .cent{
   display:table;
   margin: 10px auto;
+  width:300px;
 }
 
 #icons{

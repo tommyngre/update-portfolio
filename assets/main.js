@@ -21,7 +21,7 @@ function getDots(whichLink) {
 function buildLink(whichLink) {
   let dots = getDots(whichLink);
   let col = assignRandomColor();
-  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">${dots}{${whichLink}}</span>`
+  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">{${whichLink}}${dots}</span>`
   return html;
 }
 
