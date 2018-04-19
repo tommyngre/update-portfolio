@@ -117,7 +117,8 @@ function toLeft(section) {
     'margin-left': 0
   }, "fast");
 
-  $('#loading-container').addClass('col s12 m6 l3');
+  $('#loading-container').addClass('col s12 m6 l3')
+  .append($('#icons-wrapper'));
 
   loadSection(section);
 }

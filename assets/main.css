@@ -21,6 +21,14 @@ p{
   margin: 10px auto;
 }
 
+#icons{
+  margin:0 auto;
+}
+
+.icon{
+  font-size: .7em;
+}
+
 #loading-container{
   position: relative;
   margin-bottom:20px;
