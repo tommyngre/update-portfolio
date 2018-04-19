@@ -106,21 +106,19 @@ function toLeft(section) {
 
   setTimeout(function () {
     $('.nuthin').remove();
-  }, 100);
 
-  //animate the move from center to left
-  $('.cent').animate({
-    'margin': 0
-  }, "fast");
+      //animate the move from center to left
+  $('.cent').css('margin','0 auto');
 
-  $('.somethin').animate({
-    'margin-left': 0
-  }, "fast");
+  $('.somethin').css('margin','0 auto');
 
-  $('#loading-container').addClass('col s12 m6 l3')
+  $('#loading-container').addClass('col s12 m6 l4')
   .append($('#icons-wrapper'));
 
   loadSection(section);
+
+  }, 800);
+
 }
 
 $(document.body).on('click', '#about', function () {
