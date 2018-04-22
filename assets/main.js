@@ -37,7 +37,7 @@ function getDiv(i, aboutmePos, portfolioPos) {
     return div;
   } else {
     $(div).addClass('nuthin')
-      .html(`<span class="cent" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</span>`)
+      .html(`<span class="cent" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</span>`)
   }
   return div;
 }
@@ -82,6 +82,30 @@ function loadingDialog() {
   } while (i < whByDh);
 }
 
+function getSectionContent(section) {
+  console.log(section);
+  let html = '';
+
+  switch (section) {
+    case "#ABOUT":
+      html += `
+      <p>A little bit about me...</p>
+      `
+      return html;
+      break;
+
+    case "#PORTFOLIO":
+      html += `
+      <p>Some recent projects...</p>
+      `
+      return html;
+      break;
+
+    default:
+      //nothin
+  }
+}
+
 function loadSection(section) {
   $('#section-wrap').html("");
   let sec = $('<div id="sec">')
@@ -93,23 +117,21 @@ function loadSection(section) {
     <p style="text-align:center">${$(section).attr('data-name')}</p>
   `;
 
-  html += `
-  <p>Here's where we put some info...</p>
-  `
+  html += getSectionContent(section);
 
   $(sec).html(html);
 
   $("#section-wrap").append(sec)
-  .addClass('animatedFast fadeInDown')
+    .addClass('animatedFast fadeInDown')
 
   $("#loading-container")
-  .addClass('animatedFast fadeInDown')
+    .addClass('animatedFast fadeInDown')
 
 }
 
 function toLeft(section) {
   $('.nuthin').removeClass('animated')
-  .addClass('animatedFast fadeOutLeft');
+    .addClass('animatedFast fadeOutLeft');
 
   setTimeout(function () {
     $('#loading-container').addClass('fadeInLeft');
@@ -124,7 +146,7 @@ function toLeft(section) {
     loadSection(section);
 
   }, 200);
-  
+
 }
 
 $(document.body).on('click', '#ABOUT', function () {
