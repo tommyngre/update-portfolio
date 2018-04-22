@@ -11,9 +11,9 @@ function assignRandomColor() {
 
 function getDots(whichLink) {
   let dots = "";
-  let dotsNeeded = 12 - whichLink.length - 2;
-  for (let i = 0; i<dotsNeeded; i++){
-    dots = dots + ".";
+  let dotsNeeded = 13 - whichLink.length - 4;
+  for (let i = 0; i < dotsNeeded; i++) {
+    dots = dots + "&nbsp;";
   }
   return dots;
 }
@@ -21,23 +21,23 @@ function getDots(whichLink) {
 function buildLink(whichLink) {
   let dots = getDots(whichLink);
   let col = assignRandomColor();
-  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">{${whichLink}}${dots}</span>`
+  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:white">&lt; ${whichLink} ${dots}&gt;</span>`
   return html;
 }
 
 function getDiv(i, aboutmePos, portfolioPos) {
   let div = $('<div class="cent row animated bounce">')
   if (i == aboutmePos) {
-    let html = buildLink("about");
+    let html = buildLink("ABOUT");
     $(div).addClass('somethin some-some').html(html);
     return div;
   } else if (i == portfolioPos) {
-    let html = buildLink("portfolio");
+    let html = buildLink("PORTFOLIO");
     $(div).addClass('somethin some-some').html(html);
     return div;
   } else {
     $(div).addClass('nuthin')
-      .html(`<span class="cent" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">............</span>`)
+      .html(`<span class="cent" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</span>`)
   }
   return div;
 }
@@ -85,11 +85,12 @@ function loadingDialog() {
 function loadSection(section) {
   $('#section-wrap').html("");
   let sec = $('<div id="sec">')
-    .css('color', $(section).css('color'))
-    //.css('background-color', $(section).css('background-color'))
+    .css('color', 'black')
+  //.css('color', $(section).css('color'))
+  //.css('background-color', $(section).css('background-color'))
 
   let html = `
-    <p style="background-color:${$(section).css('background-color')}; text-align:center">${$(section).attr('data-name')}</p>
+    <p style="text-align:center">${$(section).attr('data-name')}</p>
   `;
 
   html += `
@@ -98,35 +99,40 @@ function loadSection(section) {
 
   $(sec).html(html);
 
-  $("#section-wrap").append(sec);
+  $("#section-wrap").append(sec)
+  .addClass('animatedFast fadeInDown')
+
+  $("#loading-container")
+  .addClass('animatedFast fadeInDown')
+
 }
 
 function toLeft(section) {
-  $('.nuthin').addClass('fadeOutLeft');
+  $('.nuthin').removeClass('animated')
+  .addClass('animatedFast fadeOutLeft');
 
   setTimeout(function () {
+    $('#loading-container').addClass('fadeInLeft');
+
     $('.nuthin').remove();
 
-      //animate the move from center to left
-  $('.cent').css('margin','0 auto');
+    $('.cent').css('margin', '5px auto');
 
-  $('.somethin').css('margin','0 auto');
+    $('#loading-container').addClass('col s12 m6 l4')
+      .append($('#icons-wrapper'));
 
-  $('#loading-container').addClass('col s12 m6 l4')
-  .append($('#icons-wrapper'));
+    loadSection(section);
 
-  loadSection(section);
-
-  }, 800);
-
+  }, 200);
+  
 }
 
-$(document.body).on('click', '#about', function () {
-  toLeft('#about');
+$(document.body).on('click', '#ABOUT', function () {
+  toLeft('#ABOUT');
 })
 
-$(document.body).on('click', '#portfolio', function () {
-  toLeft('#portfolio');
+$(document.body).on('click', '#PORTFOLIO', function () {
+  toLeft('#PORTFOLIO');
 })
 
 $(document).ready(function () {

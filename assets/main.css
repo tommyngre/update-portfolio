@@ -1,7 +1,25 @@
 body{
   font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
   font-size: 3rem;
-  font-style: italic;
+  font-style: normal;
+}
+
+/* background image */
+.bg {
+  height: 100vh;
+  width: auto;
+}
+.bg::after {
+  content: "";
+  background: url("./censored.png");
+  background-size:cover;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 #sec{
@@ -20,8 +38,7 @@ p{
 
 .cent{
   display:table;
-  margin: 10px auto;
-  width:300px;
+  margin: 5px auto;
 }
 
 #icons{
@@ -44,3 +61,9 @@ p{
   cursor: pointer;
 }
 
+.animatedFast {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
