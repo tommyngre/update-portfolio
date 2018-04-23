@@ -1,7 +1,8 @@
 body{
-  font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+  font-family: 'Lato', 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-style: normal;
+  font-weight: 900;
 }
 
 /* background image */
@@ -60,6 +61,10 @@ p{
   margin-bottom:20px;
 }
 
+#loading-dialog{
+  font-weight: 400;
+}
+
 .load-section:hover{
   /* text-decoration: currentColor;
   text-decoration-line: underline;
@@ -67,9 +72,35 @@ p{
   cursor: pointer;
 }
 
+.proj-pic{
+  height:200px;
+}
+
 .animatedFast {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+.sm-txt{
+  font-size: .7em;
+}
+
+ul:not(.browser-default)>li{
+  list-style: square;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+ul{
+  margin:0 10px;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+li{
+  display:list-item;
+  list-style-type: square;
+  margin-left: 25px;
 }

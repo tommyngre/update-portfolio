@@ -1,3 +1,18 @@
+let portfolio = [
+  {
+    name: 'Toger Trivia',
+    description: "a minimalist, timed trivia game currently loaded with nonsense questions",
+    url: 'https://tommyngre.github.io/TriviaGame/',
+    image: './gallery/Trivia.png',
+  },
+  {
+    name: 'Legendary One-Up',
+    description: "a tongue-in-cheek 'fighting game' inspired by the oneupsmanship of former co-workers",
+    url: 'https://tommyngre.github.io/week-4-game/',
+    image: './gallery/RPG.png',
+  }
+]
+
 function randomColor() {
   let r = Math.floor(Math.random() * 255)
   return r;
@@ -55,9 +70,6 @@ function loadingDialog() {
 
   console.log(whByDh);
 
-  //get monospace char width
-  //printed random char instead of '...'
-
   let i = 0
   let t = 300;
 
@@ -89,20 +101,47 @@ function getSectionContent(section) {
   switch (section) {
     case "#ABOUT":
       html += `
-      <p>A little bit about me...</p>
+      <ul class="sm-txt">
+        <li>Grew up in Chicago suburbs</li>
+        <li>Undergraduate at UW Madison</li>
+        <li>5+ years as QA and Technical Support Engineer at Epic, a healthcare software vendor in Verona, WI</li>
+        <li>Since Feb 2017, working as an EDA Analyst on reverse reference interfaces for LabCorp, a clinical laboratory network in Burlington, NC</li>
+        <li>Since Feb 2018, enrolled in 24 week full stack web dev program offered by Trilogy Education Services in partnership with UNC Chapel Hill
+      </ul>  
       `
       return html;
       break;
 
     case "#PORTFOLIO":
-      html += `
-      <p>Some recent projects...</p>
-      `
+      portfolio.forEach(project => {
+        
+        html += `
+        <div class="sm-txt">
+          
+          <div class="row center-align">
+            <p>${project.name}</p>
+          </div>
+          
+          <div class="row">
+            <div class="col s12 m6">
+              <p>${project.description}</p>
+            </div>
+            <div class="col s12 m6 center-align">
+              <a href="${project.url}">
+                <img class="proj-pic" src="${project.image}">
+              </a>
+            </div>
+          </div>
+
+        </div>
+        `
+
+      });
       return html;
       break;
 
     default:
-      //nothin
+    //nothin
   }
 }
 
@@ -137,6 +176,7 @@ function toLeft(section) {
     $('#loading-container').addClass('fadeInLeft');
 
     $('.nuthin').remove();
+    $('#loading-dialog').remove();
 
     $('.cent').css('margin', '5px auto');
 
