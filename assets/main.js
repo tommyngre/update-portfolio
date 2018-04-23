@@ -3,13 +3,19 @@ let portfolio = [
     name: 'Toger Trivia',
     description: "a minimalist, timed trivia game currently loaded with nonsense questions",
     url: 'https://tommyngre.github.io/TriviaGame/',
-    image: './gallery/Trivia.png',
+    image: './gallery/toger-trivia.gif',
   },
   {
     name: 'Legendary One-Up',
     description: "a tongue-in-cheek 'fighting game' inspired by the oneupsmanship of former co-workers",
     url: 'https://tommyngre.github.io/week-4-game/',
-    image: './gallery/RPG.png',
+    image: './gallery/week-4-game.gif',
+  },
+  {
+    name: "Who Hangin'?",
+    description: "a goofy take on hangman asks players 'who hangin?' correct guesses result in that person not 'hangin' after all",
+    url: 'https://tommyngre.github.io/Hangman-Game/',
+    image: './gallery/hangman.gif',
   }
 ]
 
@@ -104,8 +110,8 @@ function getSectionContent(section) {
       <ul class="sm-txt">
         <li>Grew up in Chicago suburbs</li>
         <li>Undergraduate at UW Madison</li>
-        <li>5+ years as QA and Technical Support Engineer at Epic, a healthcare software vendor in Verona, WI</li>
-        <li>Since Feb 2017, working as an EDA Analyst on reverse reference interfaces for LabCorp, a clinical laboratory network in Burlington, NC</li>
+        <li>5+ years as QA and Technical Support Engineer at Epic, a healthcare software vendor in Verona, Wisconsin</li>
+        <li>Since Feb 2017, working as an EDA Analyst on reverse reference interfaces for LabCorp, a clinical laboratory network headquartered in Burlington, North Carolina</li>
         <li>Since Feb 2018, enrolled in 24 week full stack web dev program offered by Trilogy Education Services in partnership with UNC Chapel Hill
       </ul>  
       `
@@ -125,12 +131,13 @@ function getSectionContent(section) {
             <p>${project.description}</p>
             </div>
           
-          <div class="col s12 m4 center-align">
-          <a class="valign-wrapper" href="${project.url}">
-            <img class="proj-pic" src="${project.image}">
-          </a>
-        </div>
-        </div>
+            <div class="col s12 m4 center-align">
+              <a class="valign-wrapper" href="${project.url}">
+                <img alt="${project.name} gif" class="proj-pic" style="border: 5px solid ${assignRandomColor()}" src="${project.image}">
+              </a>
+            </div>
+
+          </div>
         </div>
         `
 
@@ -160,6 +167,11 @@ function loadSection(section) {
 
   $("#section-wrap").append(sec)
     .addClass('animatedFast fadeInDown')
+
+  //remove fadeIn after delay, so can be reactivated
+  setTimeout(function(){
+    $("#section-wrap").removeClass('fadeInDown');
+  },500);
 
   $("#loading-container")
     .addClass('animatedFast fadeInDown')

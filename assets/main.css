@@ -43,7 +43,7 @@ p{
   margin: 5px auto;
 }
 
-.cent:hover{
+.load-section:hover{
   transform: perspective(600) rotateY(-12deg);
   -webkit-transform: perspective(600) rotateY(-12deg);
   opacity: .9;
@@ -90,7 +90,6 @@ p{
 
 .proj-pic{
   height:200px;
-  border: 2px solid black;
 }
 
 .animatedFast {
