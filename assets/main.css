@@ -1,4 +1,5 @@
 body{
+  height:100%;
   font-family: 'Lato', 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-style: normal;
@@ -72,8 +73,24 @@ p{
   cursor: pointer;
 }
 
+.t-card{
+  background:white;
+  overflow:auto;
+  margin: 10px;
+  width:90%;
+}
+
+.row .t-pad{
+  margin-bottom:0px;
+}
+
+.t-pad{
+  padding:10px;
+}
+
 .proj-pic{
   height:200px;
+  border: 2px solid black;
 }
 
 .animatedFast {

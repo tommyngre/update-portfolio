@@ -116,23 +116,21 @@ function getSectionContent(section) {
       portfolio.forEach(project => {
         
         html += `
-        <div class="sm-txt">
+        <div class="sm-txt t-card">
           
-          <div class="row center-align">
-            <p>${project.name}</p>
-          </div>
-          
-          <div class="row">
-            <div class="col s12 m6">
-              <p>${project.description}</p>
-            </div>
-            <div class="col s12 m6 center-align">
-              <a href="${project.url}">
-                <img class="proj-pic" src="${project.image}">
-              </a>
-            </div>
-          </div>
+          <div class="row t-pad">
 
+            <div class="col s12 m8">
+            <p>${project.name}</p>  
+            <p>${project.description}</p>
+            </div>
+          
+          <div class="col s12 m4 center-align">
+          <a class="valign-wrapper" href="${project.url}">
+            <img class="proj-pic" src="${project.image}">
+          </a>
+        </div>
+        </div>
         </div>
         `
 
