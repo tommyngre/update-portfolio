@@ -1,25 +1,31 @@
 let portfolio = [
   {
     name: 'Toger Trivia',
-    description: "a minimalist, timed trivia game currently loaded with nonsense questions",
+    description: "a slick, timed trivia game currently loaded with nonsense questions",
     url: 'https://tommyngre.github.io/TriviaGame/',
-    image: './gallery/toger-trivia.gif',
+    image: './gallery/RPG.png',
   },
   {
     name: 'Legendary One-Up',
     description: "a tongue-in-cheek 'fighting game' inspired by the oneupsmanship of former co-workers",
     url: 'https://tommyngre.github.io/week-4-game/',
-    image: './gallery/week-4-game.gif',
+    image: './gallery/Trivia.png',
   },
   {
-    name: "Giphy Search API",
+    name: "Giphy Search",
     description: "a nifty front-end for the Giphy API",
     url: 'https://tommyngre.github.io/giphy-api-app/',
-    image: '',
+    image: './gallery/giphy.png',
+  },
+  {
+    name: "Who Hangin?",
+    description: "an irreverant take on Hangman, where correctly guessing 'who hangin?' rescues the imaginary person who was hangin",
+    url: 'https://tommyngre.github.io/Hangman-Game/',
+    image: './gallery/hangman.png',
   },
   {
     name: "Listen hear!",
-    description: "a local music and dining app. spotify users can enter a zip, then preview all nearby music acts performing that night. ",
+    description: "a local music & dining app. spotify users can enter a zip, then preview nearby music acts performing that night. ",
     url: 'https://tommyngre.github.io/listen-hear/',
     image: '',
   }
@@ -130,14 +136,14 @@ function getSectionContent(section) {
         html += `
         <div class="sm-txt t-card">
           
-          <div class="row t-pad">
+          <div class="row t-card-pad">
 
-            <div class="col s12 m8">
-            <p>${project.name}</p>  
+            <div class="col l12 xl8">
+            <p class="t-card-title center-align">${project.name}</p>  
             <p>${project.description}</p>
             </div>
           
-            <div class="col s12 m4 center-align">
+            <div class="col l12 xl4 proj-image-wrapper">
               <a class="valign-wrapper" href="${project.url}">
                 <img alt="${project.name} gif" class="proj-pic" style="border: 5px solid ${assignRandomColor()}" src="${project.image}">
               </a>

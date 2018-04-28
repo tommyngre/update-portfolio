@@ -62,20 +62,31 @@ p{
 .t-card{
   background:white;
   overflow:auto;
-  margin: 10px;
+  margin: 10px auto;
   width:90%;
 }
 
-.row .t-pad{
+.t-card-title{
+  text-decoration: underline;
+}
+
+.row .t-card-pad{
   margin-bottom:0px;
 }
 
-.t-pad{
+.t-card-pad{
   padding:10px;
+}
+
+.proj-image-wrapper{
+  margin:0 auto;
+  width:100%;
 }
 
 .proj-pic{
   height:200px;
+  margin:0 auto;
+
 }
 
 .animatedFast {
@@ -107,12 +118,17 @@ li{
   margin-left: 25px;
 }
 
+@media screen and (max-width: 1200px) {
+  .proj-image-wrapper{
+    margin-top:20px;
+  }
+
+}
+
 @media screen and (max-width: 600px) {
 
   #sec-title{
     background-color:skyblue;
     text-align:center;
   }
-  
-
 }
