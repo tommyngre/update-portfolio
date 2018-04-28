@@ -6,29 +6,15 @@ body{
   font-weight: 900;
 }
 
-/* background image */
-.bg {
-  height: 100%;
-  width: auto;
-}
-.bg::after {
-  content: "";
-  background: url("./censored.png");
-  background-size:cover;
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
-
 #sec{
   font-family: 'Dosis', sans-serif;
   font-style: normal;
   display:inline-block;
   font-weight: 400
+}
+
+#sec-title{
+  text-align:center;
 }
 
 p{
@@ -119,4 +105,14 @@ li{
   display:list-item;
   list-style-type: square;
   margin-left: 25px;
+}
+
+@media screen and (max-width: 600px) {
+
+  #sec-title{
+    background-color:skyblue;
+    text-align:center;
+  }
+  
+
 }

@@ -12,10 +12,16 @@ let portfolio = [
     image: './gallery/week-4-game.gif',
   },
   {
-    name: "Who Hangin'?",
-    description: "a goofy take on hangman asks players 'who hangin?' correct guesses result in that person not 'hangin' after all",
-    url: 'https://tommyngre.github.io/Hangman-Game/',
-    image: './gallery/hangman.gif',
+    name: "Giphy Search API",
+    description: "a nifty front-end for the Giphy API",
+    url: 'https://tommyngre.github.io/giphy-api-app/',
+    image: '',
+  },
+  {
+    name: "Listen hear!",
+    description: "a local music and dining app. spotify users can enter a zip, then preview all nearby music acts performing that night. ",
+    url: 'https://tommyngre.github.io/listen-hear/',
+    image: '',
   }
 ]
 
@@ -24,25 +30,27 @@ function randomColor() {
   return r;
 }
 
+//risky but fun
 function assignRandomColor() {
   let init = [1, 1, 1];
   let rgb = init.map(element => element * randomColor());
   return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},1)`;
 }
 
+//this was more useful when font was monotype. now, eh.
 function getDots(whichLink) {
   let dots = "";
-  let dotsNeeded = 13 - whichLink.length - 4;
+  let dotsNeeded = 12 - whichLink.length - 3;
   for (let i = 0; i < dotsNeeded; i++) {
     dots = dots + "&nbsp;";
   }
-  return dots;
+  return `<span>${dots}</span>`;
 }
 
 function buildLink(whichLink) {
   let dots = getDots(whichLink);
   let col = assignRandomColor();
-  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:white">&lt; ${whichLink} ${dots}&gt;</span>`
+  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:white">&lt;${whichLink}${dots}&gt;</span>`
   return html;
 }
 
@@ -58,36 +66,35 @@ function getDiv(i, aboutmePos, portfolioPos) {
     return div;
   } else {
     $(div).addClass('nuthin')
-      .html(`<span class="cent" style="color:${assignRandomColor()}; background-color:${assignRandomColor()}">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</span>`)
+      .html(`<span class="cent" style="color:${assignRandomColor()}">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</span>`)
   }
   return div;
 }
 
 function loadingDialog() {
-  let dh = $('#loading-dialog').outerHeight(true);
 
+  //determine how many links
+  ///will fit on pg w/o scrolling
+  let dh = $('#loading-dialog').outerHeight(true) + $('#icons').outerHeight(true);
   let wh = window.innerHeight;
   let ww = window.innerWidth;
+  let whByDh = 2; //Math.floor((wh - dh) / dh) - 1;
 
-  console.log(dh);
-  console.log(wh);
 
-  let whByDh = Math.floor((wh - dh) / dh) - 1;
-
-  console.log(whByDh);
-
-  let i = 0
-  let t = 300;
+  let i = 0; //link position
+  let t = 300; //speed links are drawn
 
   let aboutMePos = Math.floor(Math.random() * whByDh);
   let portfolioPos = Math.floor(Math.random() * whByDh);
 
+  //make sure About and Portfolio not assigned same 'i'
   if (aboutMePos == portfolioPos) {
     do {
       portfolioPos = Math.floor(Math.random() * whByDh);
     } while (aboutMePos == portfolioPos)
   }
 
+  
   do {
     let div = getDiv(i, aboutMePos, portfolioPos);
 
@@ -101,7 +108,6 @@ function loadingDialog() {
 }
 
 function getSectionContent(section) {
-  console.log(section);
   let html = '';
 
   switch (section) {
@@ -112,8 +118,8 @@ function getSectionContent(section) {
         <li>Undergraduate at UW Madison</li>
         <li>5+ years as QA and Technical Support Engineer at Epic, a healthcare software vendor in Verona, Wisconsin</li>
         <li>Since Feb 2017, working as an EDA Analyst on reverse reference interfaces for LabCorp, a clinical laboratory network headquartered in Burlington, North Carolina</li>
-        <li>Since Feb 2018, enrolled in 24 week full stack web dev program offered by Trilogy Education Services in partnership with UNC Chapel Hill
-      </ul>  
+        <li>Since Feb 2018, enrolled in 24 week full stack web dev program through Trilogy Education Services in partnership with UNC Chapel Hill
+      </ul> 
       `
       return html;
       break;
@@ -158,7 +164,7 @@ function loadSection(section) {
   //.css('background-color', $(section).css('background-color'))
 
   let html = `
-    <p style="text-align:center">${$(section).attr('data-name')}</p>
+    <p id='sec-title'>${$(section).attr('data-name')}</p>
   `;
 
   html += getSectionContent(section);
