@@ -24,10 +24,10 @@ let portfolio = [
     image: './gallery/hangman.png',
   },
   {
-    name: "Listen hear!",
+    name: "listen hear",
     description: "a local music & dining app. spotify users can enter a zip, then preview nearby music acts performing that night. ",
     url: 'https://tommyngre.github.io/listen-hear/',
-    image: '',
+    image: './gallery/listenhear.png',
   }
 ]
 
@@ -56,7 +56,7 @@ function getDots(whichLink) {
 function buildLink(whichLink) {
   let dots = getDots(whichLink);
   let col = assignRandomColor();
-  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}; background-color:white">&lt;${whichLink}${dots}&gt;</span>`
+  let html = `<span id="${whichLink}" data-name="${whichLink}" class="cent load-section" style="color:${assignRandomColor()}">&lt;${whichLink}${dots}&gt;</span>`
   return html;
 }
 
@@ -145,7 +145,7 @@ function getSectionContent(section) {
           
             <div class="col l12 xl4 proj-image-wrapper">
               <a class="valign-wrapper" href="${project.url}">
-                <img alt="${project.name} gif" class="proj-pic" style="border: 5px solid ${assignRandomColor()}" src="${project.image}">
+                <img alt="${project.name} gif" class="proj-pic" src="${project.image}">
               </a>
             </div>
 

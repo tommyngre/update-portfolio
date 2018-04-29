@@ -86,7 +86,9 @@ p{
 .proj-pic{
   height:200px;
   margin:0 auto;
-
+  padding:10px;
+  border: 2px solid black;
+  border-radius:10px;
 }
 
 .animatedFast {
