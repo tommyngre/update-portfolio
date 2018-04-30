@@ -43,6 +43,13 @@ p{
   font-size: .7em;
 }
 
+.icon-link{
+  color:black;
+}
+.icon-link:hover{
+  opacity:.7;
+}
+
 #loading-container{
   position: relative;
   margin-bottom:20px;

@@ -144,7 +144,7 @@ function getSectionContent(section) {
             </div>
           
             <div class="col l12 xl4 proj-image-wrapper">
-              <a class="valign-wrapper" href="${project.url}">
+              <a class="valign-wrapper" href="${project.url}" target="_blank">
                 <img alt="${project.name} gif" class="proj-pic" src="${project.image}">
               </a>
             </div>
