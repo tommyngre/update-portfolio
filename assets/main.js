@@ -198,7 +198,7 @@ function toLeft(section) {
     $('#loading-container').addClass('fadeInLeft');
 
     $('.nuthin').remove();
-    $('#loading-dialog').remove();
+    $('#tommy').remove();
 
     $('.cent').css('margin', '5px auto');
 
