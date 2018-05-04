@@ -1,3 +1,8 @@
+.t-card-v2{
+  width:500px;
+  height:500px;
+}
+
 body{
   height:100%;
   font-family: 'Lato', 'Courier New', Courier, monospace;

@@ -3,13 +3,13 @@ let portfolio = [
     name: 'Toger Trivia',
     description: "a slick, timed trivia game currently loaded with nonsense questions",
     url: 'https://tommyngre.github.io/TriviaGame/',
-    image: './gallery/RPG.png',
+    image: './gallery/Trivia.png',
   },
   {
     name: 'Legendary One-Up',
     description: "a tongue-in-cheek 'fighting game' inspired by the oneupsmanship of former co-workers",
     url: 'https://tommyngre.github.io/week-4-game/',
-    image: './gallery/Trivia.png',
+    image: './gallery/RPG.png',
   },
   {
     name: "Giphy Search",
@@ -150,6 +150,17 @@ function getSectionContent(section) {
             </div>
 
           </div>
+        </div>
+
+        <div="t-card-v2">
+        <a class="valign-wrapper" href="${project.url}" target="_blank">
+        <div class="sm-txt t-card" style="background-image:url('${project.image}'); background-repeat: no-repeat; background-size: auto;">
+        <p class="t-card-title center-align">${project.name}</p>  
+        <div class="proj-desc">
+          <p>${project.description}</p>
+        </div>
+        </div>
+        </a>
         </div>
         `
 
