@@ -10,6 +10,14 @@ b {
   font-weight:700;
 }
 
+#hire-me{
+  font-weight:800;
+  color:black;
+}
+#hire-me:hover{
+  text-decoration: underline;
+}
+
 #sec{
   font-family: 'Dosis', sans-serif;
   font-style: normal;
@@ -62,7 +70,7 @@ p{
 #loading-dialog{
   display:none;
   font-weight: 400;
-  margin-bottom:10px;
+  margin-bottom:25px;
 }
 
 .load-section:hover{
@@ -73,6 +81,7 @@ p{
   font-size:.3em;
   font-family: 'Dosis', sans-serif;
   margin-top:25px;
+  font-weight:400;
 }
 
 .t-card{
