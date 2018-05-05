@@ -1,16 +1,13 @@
-.obscure{
-  width:100%;
-  height:100%;
-  background-color:white;
-  z-index:10;
-}
-
 body{
   height:100%;
   font-family: 'Lato', 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-style: normal;
   font-weight: 900;
+}
+
+b {
+  font-weight:700;
 }
 
 #sec{
@@ -63,11 +60,19 @@ p{
 }
 
 #loading-dialog{
+  display:none;
   font-weight: 400;
+  margin-bottom:10px;
 }
 
 .load-section:hover{
   cursor: pointer;
+}
+
+#signature{
+  font-size:.3em;
+  font-family: 'Dosis', sans-serif;
+  margin-top:25px;
 }
 
 .t-card{
@@ -151,7 +156,9 @@ li{
 }
 
 @media screen and (max-width: 600px) {
-
+  .signature-sm{
+    display:none;
+  }
   #sec-title{
     background-color:skyblue;
     text-align:center;

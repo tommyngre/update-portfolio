@@ -78,14 +78,13 @@ function getDiv(i, aboutmePos, portfolioPos) {
 }
 
 function loadingDialog() {
-
+  $('#loading-dialog').addClass('bounce').css('display','table');
   //determine how many links
   ///will fit on pg w/o scrolling
   let dh = $('#loading-dialog').outerHeight(true) + $('#icons').outerHeight(true);
   let wh = window.innerHeight;
   let ww = window.innerWidth;
   let whByDh = 2; //Math.floor((wh - dh) / dh) - 1;
-
 
   let i = 0; //link position
   let t = 300; //speed links are drawn
@@ -111,6 +110,11 @@ function loadingDialog() {
     t = t + 400;
     i++;
   } while (i < whByDh);
+
+  setTimeout(function(){
+    $('#loading-container').append(`<div id="signature" class="cent">~ TOMMY GREENFIELD ~</div>`);
+  },1000);
+
 }
 
 function getSectionContent(section) {
@@ -124,7 +128,7 @@ function getSectionContent(section) {
         <li>Undergraduate at UW Madison</li>
         <li>5+ years as QA and <b>Technical Support Engineer</b> at <a class="underline-link" href="https://www.epic.com/" style="color:${assignRandomColor()}"><b>Epic</b></a>, a healthcare software vendor in Verona, Wisconsin</li>
         <li>Since Feb 2017, working as an <b>EDA Analyst</b> on at <a class="underline-link" href="https://www.labcorp.com/" style="color:${assignRandomColor()}"><b>LabCorp</b></a>, a clinical laboratory network headquartered in Burlington, North Carolina</li>
-        <li>Since Feb 2018, enrolled in a 24 week <b>full stack web dev</b> program through Trilogy Education Services in partnership with UNC Chapel Hill
+        <li>Since Feb 2018, enrolled in a 24 week <b>full stack web dev</b> program through Trilogy Education Services and UNC Chapel Hill
       </ul> 
       `
       return html;
@@ -204,8 +208,8 @@ function toLeft(section) {
     $('.cent').css('margin', '5px auto');
 
     $('#loading-container').addClass('col s12 m6 l4')
-      .append($('#icons-wrapper'));
-
+      .append($('#icons-wrapper'))
+      .append($('#signature').addClass('signature-sm').css('margin-top','30px'));
     loadSection(section);
 
   }, 200);
@@ -214,12 +218,12 @@ function toLeft(section) {
 
 $(document.body).on('click', '#ABOUT', function () {
   toLeft('#ABOUT');
-})
+});
 
 $(document.body).on('click', '#PORTFOLIO', function () {
   toLeft('#PORTFOLIO');
-})
+});
 
 $(document).ready(function () {
   loadingDialog();
-})
+});
