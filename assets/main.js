@@ -1,25 +1,25 @@
 let portfolio = [
   {
     name: 'Toger Trivia',
-    description: "a slick, timed trivia game currently loaded with nonsense questions",
+    description: "A slick, timed trivia game currently loaded with nonsense questions.",
     url: 'https://tommyngre.github.io/TriviaGame/',
     image: './gallery/Trivia.png',
   },
   {
     name: 'Legendary One-Up',
-    description: "a tongue-in-cheek 'fighting game' inspired by the oneupsmanship of former co-workers",
+    description: "A tongue-in-cheek 'fighting game' inspired by the oneupsmanship of co-workers.",
     url: 'https://tommyngre.github.io/week-4-game/',
     image: './gallery/RPG.png',
   },
   {
     name: "Giphy Search",
-    description: "a nifty front-end for the Giphy API",
+    description: "A nifty front-end for the Giphy API.",
     url: 'https://tommyngre.github.io/giphy-api-app/',
     image: './gallery/giphy.png',
   },
   {
     name: "Who Hangin?",
-    description: "an irreverant take on Hangman, where correctly guessing 'who hangin?' rescues the imaginary person who was hangin",
+    description: "An irreverant take on hangman, where correctly guessing 'who hangin?' wins the game.",
     url: 'https://tommyngre.github.io/Hangman-Game/',
     image: './gallery/hangman.png',
   },
@@ -122,9 +122,9 @@ function getSectionContent(section) {
       <ul class="sm-txt">
         <li>Grew up in Chicago suburbs</li>
         <li>Undergraduate at UW Madison</li>
-        <li>5+ years as QA and Technical Support Engineer at Epic, a healthcare software vendor in Verona, Wisconsin</li>
-        <li>Since Feb 2017, working as an EDA Analyst on reverse reference interfaces for LabCorp, a clinical laboratory network headquartered in Burlington, North Carolina</li>
-        <li>Since Feb 2018, enrolled in 24 week full stack web dev program through Trilogy Education Services in partnership with UNC Chapel Hill
+        <li>5+ years as QA and <b>Technical Support Engineer</b> at <a class="underline-link" href="https://www.epic.com/" style="color:${assignRandomColor()}"><b>Epic</b></a>, a healthcare software vendor in Verona, Wisconsin</li>
+        <li>Since Feb 2017, working as an <b>EDA Analyst</b> on at <a class="underline-link" href="https://www.labcorp.com/" style="color:${assignRandomColor()}"><b>LabCorp</b></a>, a clinical laboratory network headquartered in Burlington, North Carolina</li>
+        <li>Since Feb 2018, enrolled in a 24 week <b>full stack web dev</b> program through Trilogy Education Services in partnership with UNC Chapel Hill
       </ul> 
       `
       return html;
@@ -137,10 +137,11 @@ function getSectionContent(section) {
         <div class="sm-txt t-card">
           
           <div class="row t-card-pad">
+          <div class="obscure"></div>
 
             <div class="col l12 xl8">
             <p class="t-card-title center-align">${project.name}</p>  
-            <p>${project.description}</p>
+            <p class="t-card-desc">${project.description}</p>
             </div>
           
             <div class="col l12 xl4 proj-image-wrapper">
@@ -150,17 +151,6 @@ function getSectionContent(section) {
             </div>
 
           </div>
-        </div>
-
-        <div="t-card-v2">
-        <a class="valign-wrapper" href="${project.url}" target="_blank">
-        <div class="sm-txt t-card" style="background-image:url('${project.image}'); background-repeat: no-repeat; background-size: auto;">
-        <p class="t-card-title center-align">${project.name}</p>  
-        <div class="proj-desc">
-          <p>${project.description}</p>
-        </div>
-        </div>
-        </a>
         </div>
         `
 

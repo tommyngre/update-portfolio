@@ -1,6 +1,8 @@
-.t-card-v2{
-  width:500px;
-  height:500px;
+.obscure{
+  width:100%;
+  height:100%;
+  background-color:white;
+  z-index:10;
 }
 
 body{
@@ -65,9 +67,6 @@ p{
 }
 
 .load-section:hover{
-  /* text-decoration: currentColor;
-  text-decoration-line: underline;
-  text-decoration-style: solid; */
   cursor: pointer;
 }
 
@@ -80,6 +79,7 @@ p{
 
 .t-card-title{
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .row .t-card-pad{
@@ -102,6 +102,11 @@ p{
   border: 2px solid black;
   border-radius:10px;
 }
+.proj-pic:hover{
+  transform: perspective(600) rotateY(-12deg);
+  -webkit-transform: perspective(600) rotateY(-12deg);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
 
 .animatedFast {
   -webkit-animation-duration: .5s;
@@ -110,12 +115,16 @@ p{
   animation-fill-mode: both;
 }
 
+.underline-link{
+  text-decoration: underline;
+}
+
 .sm-txt{
   font-size: .7em;
 }
 
 ul:not(.browser-default)>li{
-  list-style: square;
+  list-style: circle;
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
 }
@@ -136,7 +145,9 @@ li{
   .proj-image-wrapper{
     margin-top:20px;
   }
-
+  .t-card-desc{
+    text-align:center;
+  }
 }
 
 @media screen and (max-width: 600px) {
