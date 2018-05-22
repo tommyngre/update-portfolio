@@ -6,6 +6,12 @@ let portfolio = [
     image: './gallery/Trivia.png',
   },
   {
+    name: 'Ultimate Match Survey',
+    description: "A survey app built with node and express, which compares users' responses in order to find a 'match.'",
+    url: 'https://powerful-brushlands-13053.herokuapp.com',
+    image: './gallery/survey.png',
+  },
+  {
     name: 'Legendary One-Up',
     description: "A tongue-in-cheek 'fighting game' inspired by the oneupsmanship of co-workers.",
     url: 'https://tommyngre.github.io/week-4-game/',
@@ -126,9 +132,18 @@ function getSectionContent(section) {
       <ul class="sm-txt">
         <li>Grew up in Chicago suburbs</li>
         <li>Undergraduate at UW Madison</li>
-        <li>5+ years as QA and <b>Technical Support Engineer</b> at <a class="underline-link" href="https://www.epic.com/" style="color:${assignRandomColor()}"><b>Epic</b></a>, a healthcare software vendor in Verona, Wisconsin</li>
-        <li>Since Feb 2017, working as an <b>EDA Analyst</b> on at <a class="underline-link" href="https://www.labcorp.com/" style="color:${assignRandomColor()}"><b>LabCorp</b></a>, a clinical laboratory network headquartered in Burlington, North Carolina</li>
-        <li>Since Feb 2018, enrolled in a 24 week <b>full stack web dev</b> program through Trilogy Education Services and UNC Chapel Hill
+        <li>5+ years as QA and <b>Technical Support Engineer</b> at <b class="underline-link" style="color:${assignRandomColor()}">Epic</b></a>, a healthcare software vendor in Verona, Wisconsin
+            
+          <div id="epic-detail" class="detail">Epic
+            <ul>
+              <li>Something</li>
+              <li>Something else</li>
+            </ul>
+          </div>
+          
+        </li>
+        <li>Since Feb 2017, working as an <b>EDA Analyst</b> on at <b class="underline-link" style="color:${assignRandomColor()}">LabCorp</b></a>, a clinical laboratory network headquartered in Burlington, North Carolina</li>
+        <li>Since Feb 2018, enrolled in a 24 week <b>full stack web dev</b> program through <b class="underline-link" style="color:${assignRandomColor()}">Trilogy Education Services and UNC Chapel Hill</b>
       </ul> 
       `
       return html;
