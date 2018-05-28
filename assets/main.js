@@ -7,7 +7,7 @@ let portfolio = [
   },
   {
     name: 'My Reading List',
-    description: "A full stack app built with node, express, handlebars, which reads and writes entries to a JAWs databse",
+    description: "A full stack app built with node, express, handlebars, which reads and writes entries to a JawsDB.",
     url: 'https://blooming-beyond-98044.herokuapp.com/',
     image: './gallery/reading.png',
   },
