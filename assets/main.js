@@ -6,6 +6,12 @@ let portfolio = [
     image: './gallery/Trivia.png',
   },
   {
+    name: 'My Reading List',
+    description: "A full stack app built with node, express, handlebars, which reads and writes entries to a JAWs databse",
+    url: 'https://blooming-beyond-98044.herokuapp.com/',
+    image: './gallery/reading.png',
+  },
+  {
     name: 'Ultimate Match Survey',
     description: "A survey app built with node and express, which compares users' responses in order to find a 'match.'",
     url: 'https://powerful-brushlands-13053.herokuapp.com',
