@@ -148,7 +148,7 @@ function getSectionContent(section) {
           </div>
           
         </li>
-        <li>Since Feb 2017, working as an <b>EDA Analyst</b> on at <b class="underline-link" style="color:${assignRandomColor()}">LabCorp</b></a>, a clinical laboratory network headquartered in Burlington, North Carolina</li>
+        <li>Since Feb 2017, working as an <b>EDA Analyst</b> at <b class="underline-link" style="color:${assignRandomColor()}">LabCorp</b></a>, a clinical laboratory network headquartered in Burlington, North Carolina</li>
         <li>Feb-Aug 2018, 24 week <b>full stack web dev</b> program through <b class="underline-link" style="color:${assignRandomColor()}">Trilogy Education Services and UNC Chapel Hill</b>
       </ul> 
       `
