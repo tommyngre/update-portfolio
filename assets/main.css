@@ -113,8 +113,7 @@ p{
   height:200px;
   margin:0 auto;
   padding:10px;
-  border: 2px solid black;
-  border-radius:10px;
+  box-shadow: 1px 1px 15px 0px #888888;
 }
 .proj-pic:hover{
   transform: perspective(600) rotateY(-12deg);
