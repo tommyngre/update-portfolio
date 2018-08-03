@@ -124,7 +124,7 @@ function loadingDialog() {
   } while (i < whByDh);
 
   setTimeout(function(){
-    $('#loading-container').append(`<div id="signature" class="cent">~ <a id="hire-me" href="mailto:tommyn.gre@gmail.com"><b>HIRE</b></a> TOMMY GREENFIELD ~</div>`);
+    $('#loading-container').append(`<div id="signature" class="cent">~ <a id="hire-me" href="mailto:tommyn.gre@gmail.com"><b>HIRE </b><i class="fas fa-mouse-pointer"></i></a> TOMMY GREENFIELD ~</div>`);
   },1000);
 
 }
